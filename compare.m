@@ -46,3 +46,7 @@ fprintf('\n Bit plane 5 %0.4f \n', snr5);
 fprintf('\n Bit plane 6 %0.4f \n', snr6);
 fprintf('\n Bit plane 7 %0.4f \n', snr7);
 fprintf('\n Bit plane 8 %0.4f \n', snr8);
+
+plotData = [snr1,snr2,snr3, snr4, snr5, snr6, snr7, snr8];
+figure
+plot(plotData);
