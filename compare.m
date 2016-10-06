@@ -3,40 +3,40 @@ clc, clear all, close all
 
 A=imread('coins.png');
 
-B1=bitget(A,1);
+B1=im2uint8(logical(bitget(A,1)));
 figure,
 subplot(2,2,1);imshow(logical(B1));title('Bit plane 1');
 
-B2=bitget(A,2);
+B2=im2uint8(logical(bitget(A,2)));
 subplot(2,2,2);imshow(logical(B2));title('Bit plane 2');
 
-B3=bitget(A,3);
+B3=im2uint8(logical(bitget(A,3)));
 subplot(2,2,3);imshow(logical(B3));title('Bit plane 3');
 
-B4=bitget(A,4);
+B4=im2uint8(logical(bitget(A,4)));
 subplot(2,2,4);imshow(logical(B4));title('Bit plane 4');
 
-B5=bitget(A,5);
+B5=im2uint8(logical(bitget(A,5)));
 figure,
 subplot(2,2,1);imshow(logical(B5));title('Bit plane 5');
 
-B6=bitget(A,6);
+B6=im2uint8(logical(bitget(A,6)));
 subplot(2,2,2);imshow(logical(B6));title('Bit plane 6');
 
-B7=bitget(A,7);
+B7=im2uint8(logical(bitget(A,7)));
 subplot(2,2,3);imshow(logical(B7));title('Bit plane 7');
 
-B8=bitget(A,8);
+B8=im2uint8(logical(bitget(A,8)));
 subplot(2,2,4);imshow(logical(B8));title('Bit plane 8');
 
-[ps1, snr1] = psnr(B1, A);
-[ps2, snr2] = psnr(B2, A);
-[ps3, snr3] = psnr(B3, A);
-[ps4, snr4] = psnr(B4, A);
-[ps5, snr5] = psnr(B5, A);
-[ps6, snr6] = psnr(B6, A);
-[ps7, snr7] = psnr(B7, A);
-[ps8, snr8] = psnr(B8, A);
+[ps1, snr1] = psnr(A, B1);
+[ps2, snr2] = psnr(A, B2);
+[ps3, snr3] = psnr(A, B3);
+[ps4, snr4] = psnr(A, B4);
+[ps5, snr5] = psnr(A, B5);
+[ps6, snr6] = psnr(A, B6);
+[ps7, snr7] = psnr(A, B7);
+[ps8, snr8] = psnr(A, B8);
 
 fprintf('\n Bit plane 1 %0.4f \n', snr1);
 fprintf('\n Bit plane 2 %0.4f \n', snr2);
